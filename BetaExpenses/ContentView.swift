@@ -4,18 +4,34 @@
 //
 //  Created by Влад on 2/1/24.
 //
-
+import Observation
 import SwiftUI
 
+struct SecondView : View {
+    @Environment(\.dismiss) var dismiss
+    @State private var isRepresentaingSheet : Bool = true
+    var body: some View {
+        Button("Dismiss 1"){
+            dismiss()
+        }
+        
+    }
+}
+
+
+
+
 struct ContentView: View {
+    @State private var showingSheet : Bool = false
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Button("Show Sheet"){
+                showingSheet.toggle()
+            }
+            .sheet(isPresented: $showingSheet, content: {
+                SecondView()
+            })
         }
-        .padding()
     }
 }
 
