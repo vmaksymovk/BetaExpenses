@@ -2,14 +2,15 @@
 import Foundation
 import SwiftUI
 
-struct ExpensesItem {
+struct ExpensesItem : Identifiable{
+    let id = UUID()
     let name : String
     let type : String
-    let amount : Int
+    let amount : Double
 }
-
-class Expenses : ObservableObject {
-    @Published var items = [ExpensesItem]()
+@Observable
+class Expenses {
+    var items = [ExpensesItem]()
 }
 
 
