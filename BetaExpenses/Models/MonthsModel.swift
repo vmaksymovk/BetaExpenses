@@ -2,35 +2,36 @@
 import Foundation
 import SwiftUI
 
-struct ExpensesItem : Identifiable{
-    let id = UUID()
+struct ExpensesItem : Identifiable, Codable{
+    var id = UUID()
     let name : String
     let type : String
     let amount : Double
 }
 @Observable
 class Expenses {
-    var items = [ExpensesItem]()
-}
-
-
-enum Months : String, Identifiable, CaseIterable{
-    var id: Self {
-        return self
+    var items = [ExpensesItem](){
+        didSet{
+            if let encoded = try? JSONEncoder().encode(items){
+                UserDefaults.standard.set(encoded, forKey: "Items")
+            }
+        }
     }
-    case January = "January"
-    case February = "February"
-    case March = "March"
-    case April = "April"
-    case May = "May"
-    case June = "June"
-    case July = "July"
-    case August = "August"
-    case September = "September"
-    case October = "October"
-    case November = "November"
-    case December = "December"
+    
+    init() {
+        if let savedItems = UserDefaults.standard.data(forKey: "Items"){
+            if let decodedItems = try? JSONDecoder().decode([ExpensesItem].self, from: savedItems){
+                items = decodedItems
+                return
+            }
+        }
+        
+        items = []
+    }
 }
+
+
+
 
 
 
