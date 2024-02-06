@@ -2,6 +2,7 @@
 import Foundation
 import SwiftUI
 
+// For Expenses
 struct ExpensesItem : Identifiable, Codable{
     var id = UUID()
     let name : String
@@ -30,6 +31,8 @@ class Expenses {
     }
 }
 
+
+// For Types of Expenses
 struct TypeArray : Identifiable, Codable{
     var id = UUID()
     var type : String

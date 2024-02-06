@@ -15,6 +15,8 @@
 		F580D0722B6D46820077ED58 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F580D0712B6D46820077ED58 /* ExpensesView.swift */; };
 		F580D0742B6D4B650077ED58 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F580D0732B6D4B650077ED58 /* AddView.swift */; };
 		F580D07A2B7273E60077ED58 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F580D0792B7273E60077ED58 /* SettingView.swift */; };
+		F580D07C2B727B170077ED58 /* AddTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F580D07B2B727B170077ED58 /* AddTypes.swift */; };
+		F580D07E2B727CA50077ED58 /* ListOfTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F580D07D2B727CA50077ED58 /* ListOfTypesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		F580D0712B6D46820077ED58 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		F580D0732B6D4B650077ED58 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		F580D0792B7273E60077ED58 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		F580D07B2B727B170077ED58 /* AddTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTypes.swift; sourceTree = "<group>"; };
+		F580D07D2B727CA50077ED58 /* ListOfTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfTypesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 				F580D0712B6D46820077ED58 /* ExpensesView.swift */,
 				F580D0732B6D4B650077ED58 /* AddView.swift */,
 				F580D0792B7273E60077ED58 /* SettingView.swift */,
+				F580D07B2B727B170077ED58 /* AddTypes.swift */,
+				F580D07D2B727CA50077ED58 /* ListOfTypesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,10 +172,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F580D0722B6D46820077ED58 /* ExpensesView.swift in Sources */,
+				F580D07E2B727CA50077ED58 /* ListOfTypesView.swift in Sources */,
 				F580D06E2B6D26790077ED58 /* MonthsModel.swift in Sources */,
 				F580D0622B6BD15D0077ED58 /* ContentView.swift in Sources */,
 				F580D07A2B7273E60077ED58 /* SettingView.swift in Sources */,
 				F580D0602B6BD15D0077ED58 /* BetaExpensesApp.swift in Sources */,
+				F580D07C2B727B170077ED58 /* AddTypes.swift in Sources */,
 				F580D0742B6D4B650077ED58 /* AddView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
