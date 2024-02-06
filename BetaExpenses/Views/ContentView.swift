@@ -9,10 +9,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("Main", systemImage: "icloud.and.arrow.up")
                 }
-//            AddView(expenses: Expenses())
-//                .tabItem {
-//                    Label("SynchronizationTest", systemImage: "link.icloud.fill")
-//                }
+            SettingView()
+                .tabItem {
+                    Label("Account", systemImage: "person.crop.circle.fill")
+                }
         }
         
     }

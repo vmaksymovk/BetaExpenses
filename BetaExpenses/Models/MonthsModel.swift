@@ -30,6 +30,31 @@ class Expenses {
     }
 }
 
+struct TypeArray : Identifiable, Codable{
+    var id = UUID()
+    var type : String
+}
+@Observable
+class TypesFromArray {
+    var types = [TypeArray](){
+        didSet{
+            if let encoded = try? JSONEncoder().encode(types){
+                UserDefaults.standard.set(encoded, forKey: "Types")
+            }
+        }
+    }
+    init() {
+        if let savedTypes = UserDefaults.standard.data(forKey: "Types"){
+            if let decodedItems = try? JSONDecoder().decode([TypeArray].self, from: savedTypes){
+                types = decodedItems
+                return
+            }
+        }
+        
+        types = []
+    }
+}
+
 
 
 
