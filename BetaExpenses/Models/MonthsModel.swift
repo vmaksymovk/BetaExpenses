@@ -37,9 +37,9 @@ struct TypeArray : Identifiable, Codable{
     var id = UUID()
     var type : String
 }
-@Observable
-class TypesFromArray {
-    var types = [TypeArray](){
+
+class TypesFromArray : ObservableObject {
+    @Published var types = [TypeArray](){
         didSet{
             if let encoded = try? JSONEncoder().encode(types){
                 UserDefaults.standard.set(encoded, forKey: "Types")

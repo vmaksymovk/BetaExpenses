@@ -1,15 +1,9 @@
-//
-//  SettingView.swift
-//  BetaExpenses
-//
-//  Created by Влад on 2/6/24.
-//
 
 import SwiftUI
 
 struct SettingView: View {
     @State private var isAddtypesPresenting : Bool = false
-    @State private var types = TypesFromArray()
+    @StateObject private var types = TypesFromArray()
     var body: some View {
         NavigationStack{
             VStack{
@@ -25,12 +19,12 @@ struct SettingView: View {
                 
                 
             }
-            .navigationTitle("Settings")
+            
             .padding(.top, 40)
             Spacer()
             VStack{
                 List{
-                    NavigationLink {
+                    NavigationLink("Add types") {
                         ListOfTypesView()
                             .toolbar{
                                 Button("Add types", systemImage: "plus") {
@@ -40,12 +34,9 @@ struct SettingView: View {
                             .sheet(isPresented: $isAddtypesPresenting, content: {
                                 AddTypes(typesItems: types)
                             })
-                    } label: {
-                        HStack {
-                            Text("Add types")
-                        }
                     }
                 }
+                .navigationTitle("Settings")
             }
         }
     }

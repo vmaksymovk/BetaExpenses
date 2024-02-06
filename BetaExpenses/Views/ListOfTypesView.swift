@@ -1,14 +1,8 @@
-//
-//  ListOfTypesView.swift
-//  BetaExpenses
-//
-//  Created by Влад on 2/6/24.
-//
 
 import SwiftUI
 
 struct ListOfTypesView: View {
-    @State private var addedTypeToList = TypesFromArray()
+    @ObservedObject private var addedTypeToList = TypesFromArray()
     var body: some View {
         NavigationStack{
             List{

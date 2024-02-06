@@ -1,16 +1,10 @@
-//
-//  AddTypes.swift
-//  BetaExpenses
-//
-//  Created by Влад on 2/6/24.
-//
 
 import SwiftUI
 
 struct AddTypes: View {
     @State private var type1 = ""
-    var typesItems : TypesFromArray
-    @State private var amount = 0.0
+    @ObservedObject var typesItems : TypesFromArray
+   
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
